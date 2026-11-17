@@ -1,14 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        Animal a1 = new Animal("Simba", 5, 190.5, "Félin");
+        Lion simba = new Lion("Simba", 5, 190.0, "Africain");
+        Perroquet coco = new Perroquet("Coco", 3, 0.4, "Vert", "Bonjour");
+        Requin jaws = new Requin("Jaws", 10, 680.0, "Grand Blanc", 5.5);
 
-        // System.out.println(a1.nom);
+        System.out.println(simba);
+        System.out.println(coco);
+        System.out.println(jaws);
 
-        a1.setNom("Nala");
-        System.out.println(a1.getNom());
-
-        a1.setAge(-5);   // affiche le message d'erreur
-
-        System.out.println(a1);   // appelle toString()
+        simba.rugir();
+        coco.parler();
+        jaws.nager();
     }
 }
