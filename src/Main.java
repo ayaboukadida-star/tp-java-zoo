@@ -1,40 +1,35 @@
 public class Main {
-
-    static void nourrirAnimal(Animal a) {
-        System.out.println("\n>>> Nourrissage de " + a.getNom());
-        a.faireDuBruit();
-    }
-
     public static void main(String[] args) {
-        Animal[] zoo = {
-                new Lion("Simba", 5, 190.0, "Africain"),
-                new Perroquet("Coco", 3, 0.4, "Vert", "Coucou"),
-                new Requin("Jaws", 10, 680.0, "Grand Blanc", 5.5),
-                new Lion("Nala", 4, 140.0, "Berbère")
-        };
+        Enclos savane = new Enclos("Savane Africaine", "Mammifères", 4);
+        Enclos aquarium = new Enclos("Grand Aquarium", "Poissons", 3);
+        Enclos voliere = new Enclos("Volière Tropicale", "Oiseaux", 5);
 
-        System.out.println("=== Le zoo s'anime ! ===");
-        for (Animal a : zoo) {
-            System.out.print("- ");
-            a.faireDuBruit();
-        }
+        Lion simba = new Lion("Simba", 5, 190.0, "Africain");
+        Lion nala = new Lion("Nala", 4, 135.0, "Berbère");
+        Perroquet coco = new Perroquet("Coco", 3, 0.4, "Vert", "Bonjour");
+        Perroquet rio = new Perroquet("Rio", 2, 0.5, "Rouge", "Ola !");
+        Requin jaws = new Requin("Jaws", 10, 680.0, "Grand Blanc", 5.5);
 
-        for (Animal a : zoo) {
-            if (a instanceof Lion) {
-                Lion l = (Lion) a;
-                l.rugir();
-            }
-        }
+        savane.ajouterAnimal(simba);
+        savane.ajouterAnimal(nala);
+        aquarium.ajouterAnimal(jaws);
+        voliere.ajouterAnimal(coco);
+        voliere.ajouterAnimal(rio);
 
-        for (Animal a : zoo) {
-            nourrirAnimal(a);
-        }
-        for (Animal a : zoo) {
+        System.out.println("\n=== BIENVENUE AU ZOO ===\n");
+        savane.afficherAnimaux();
+        aquarium.afficherAnimaux();
+        voliere.afficherAnimaux();
+
+        savane.reveillerAnimaux();
+        voliere.reveillerAnimaux();
+
+        Animal[] tous = { simba, nala, coco, rio, jaws };
+        System.out.println("\n=== Nourrissage du soir ===");
+        for (Animal a : tous) {
             if (a instanceof Nourrissable n) {
-                n.manger("sa nourriture habituelle");
                 n.afficherRegime();
             }
         }
     }
-
 }
