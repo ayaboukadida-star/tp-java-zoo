@@ -1,4 +1,4 @@
-public class Animal {
+public abstract class Animal {
     private String nom;
     private int age;
     private double poids;
@@ -39,7 +39,5 @@ public class Animal {
                 " | Age : " + age + " ans" +
                 " | " + poids + " kg";
     }
-    public void faireDuBruit() {
-        System.out.println(getNom() + " fait un bruit générique...");
-    }
+    public abstract void faireDuBruit();
 }

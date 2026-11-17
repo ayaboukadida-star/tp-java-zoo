@@ -1,4 +1,4 @@
-public class Requin extends Animal {
+public class Requin extends Animal implements Nourrissable {
     private String typeRequin;
     private double longueur;
 
@@ -19,5 +19,14 @@ public class Requin extends Animal {
     @Override
     public void faireDuBruit() {
         System.out.println(getNom() + " ... (silence) ...");
+    }
+    @Override
+    public void manger(String nourriture) {
+        System.out.println(getNom() + " engloutit : " + nourriture);
+    }
+
+    @Override
+    public double getRationJournaliere() {
+        return getPoids() * 0.03;
     }
 }

@@ -29,5 +29,12 @@ public class Main {
         for (Animal a : zoo) {
             nourrirAnimal(a);
         }
+        for (Animal a : zoo) {
+            if (a instanceof Nourrissable n) {
+                n.manger("sa nourriture habituelle");
+                n.afficherRegime();
+            }
+        }
     }
+
 }

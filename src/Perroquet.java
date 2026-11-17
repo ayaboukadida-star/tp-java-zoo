@@ -1,4 +1,4 @@
-public class Perroquet extends Animal {
+public class Perroquet extends Animal implements Nourrissable {
     private String couleurPlumage;
     private String motAppris;
 
@@ -19,5 +19,14 @@ public class Perroquet extends Animal {
     @Override
     public void faireDuBruit() {
         System.out.println(getNom() + " crie : " + motAppris + " !");
+    }
+    @Override
+    public void manger(String nourriture) {
+        System.out.println(getNom() + " grignote : " + nourriture);
+    }
+
+    @Override
+    public double getRationJournaliere() {
+        return getPoids() * 0.10;
     }
 }

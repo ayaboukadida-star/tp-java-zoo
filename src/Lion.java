@@ -1,4 +1,4 @@
-public class Lion extends Animal {
+public class Lion extends Animal implements Nourrissable {
     private String race;
 
     public Lion(String nom, int age, double poids, String race) {
@@ -19,5 +19,14 @@ public class Lion extends Animal {
     @Override
     public void faireDuBruit() {
         System.out.println(getNom() + " RUGIT ! ROARRR !");
+    }
+    @Override
+    public void manger(String nourriture) {
+        System.out.println(getNom() + " dévore : " + nourriture);
+    }
+
+    @Override
+    public double getRationJournaliere() {
+        return getPoids() * 0.04;
     }
 }
