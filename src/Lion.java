@@ -16,4 +16,8 @@ public class Lion extends Animal {
     public String toString() {
         return super.toString() + " | Race : " + race;
     }
+    @Override
+    public void faireDuBruit() {
+        System.out.println(getNom() + " RUGIT ! ROARRR !");
+    }
 }

@@ -39,4 +39,7 @@ public class Animal {
                 " | Age : " + age + " ans" +
                 " | " + poids + " kg";
     }
+    public void faireDuBruit() {
+        System.out.println(getNom() + " fait un bruit générique...");
+    }
 }

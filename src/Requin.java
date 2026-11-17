@@ -16,4 +16,8 @@ public class Requin extends Animal {
     public String toString() {
         return super.toString() + " | " + typeRequin + " " + longueur + "m";
     }
+    @Override
+    public void faireDuBruit() {
+        System.out.println(getNom() + " ... (silence) ...");
+    }
 }

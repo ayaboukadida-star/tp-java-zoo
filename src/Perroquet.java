@@ -16,4 +16,8 @@ public class Perroquet extends Animal {
     public String toString() {
         return super.toString() + " | Plumage : " + couleurPlumage;
     }
+    @Override
+    public void faireDuBruit() {
+        System.out.println(getNom() + " crie : " + motAppris + " !");
+    }
 }
